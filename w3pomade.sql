@@ -36,28 +36,27 @@ DELETE FROM `aksesoris`;
 -- Dumping structure for table w3pomade.detailkeranjang
 DROP TABLE IF EXISTS `detailkeranjang`;
 CREATE TABLE IF NOT EXISTS `detailkeranjang` (
-  `idKeranjang` int(11) DEFAULT NULL,
-  `idProduks` varchar(50) DEFAULT NULL,
+  `idKeranjang` varchar(50) DEFAULT NULL,
+  `idProduk` varchar(50) DEFAULT NULL,
   `jumlah` int(11) DEFAULT NULL,
-  KEY `FK__keranjang` (`idKeranjang`),
-  KEY `FK_detailkeranjang_ikan` (`idProduks`),
-  CONSTRAINT `FK__keranjang` FOREIGN KEY (`idKeranjang`) REFERENCES `keranjang` (`idKeranjang`),
-  CONSTRAINT `FK_detailkeranjang_ikan` FOREIGN KEY (`idProduks`) REFERENCES `produk` (`idProduk`)
+  KEY `FK_detailkeranjang_ikan` (`idProduk`),
+  KEY `FK_detailkeranjang_keranjang` (`idKeranjang`),
+  CONSTRAINT `FK_detailkeranjang_ikan` FOREIGN KEY (`idProduk`) REFERENCES `produk` (`idProduk`),
+  CONSTRAINT `FK_detailkeranjang_keranjang` FOREIGN KEY (`idKeranjang`) REFERENCES `keranjang` (`idKeranjang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table w3pomade.detailkeranjang: ~1 rows (approximately)
 DELETE FROM `detailkeranjang`;
 /*!40000 ALTER TABLE `detailkeranjang` DISABLE KEYS */;
-INSERT INTO `detailkeranjang` (`idKeranjang`, `idProduks`, `jumlah`) VALUES
-	(1, 'p002', 2),
-	(1, 'p003', 4);
+INSERT INTO `detailkeranjang` (`idKeranjang`, `idProduk`, `jumlah`) VALUES
+	('1eepl0tle7nbia3ag2cter5atc0', 'p002', 2);
 /*!40000 ALTER TABLE `detailkeranjang` ENABLE KEYS */;
 
 
 -- Dumping structure for table w3pomade.keranjang
 DROP TABLE IF EXISTS `keranjang`;
 CREATE TABLE IF NOT EXISTS `keranjang` (
-  `idKeranjang` int(11) NOT NULL,
+  `idKeranjang` varchar(50) NOT NULL,
   `idUser` int(11) NOT NULL,
   `idSession` text,
   PRIMARY KEY (`idKeranjang`),
@@ -65,11 +64,11 @@ CREATE TABLE IF NOT EXISTS `keranjang` (
   CONSTRAINT `FK_keranjang_user` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table w3pomade.keranjang: ~1 rows (approximately)
+-- Dumping data for table w3pomade.keranjang: ~0 rows (approximately)
 DELETE FROM `keranjang`;
 /*!40000 ALTER TABLE `keranjang` DISABLE KEYS */;
 INSERT INTO `keranjang` (`idKeranjang`, `idUser`, `idSession`) VALUES
-	(1, 1, 'vqac4ar5vfrl00s6407nm6d7k6');
+	('1eepl0tle7nbia3ag2cter5atc0', 1, 'eepl0tle7nbia3ag2cter5atc0');
 /*!40000 ALTER TABLE `keranjang` ENABLE KEYS */;
 
 
