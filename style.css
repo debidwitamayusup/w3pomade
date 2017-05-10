@@ -1,0 +1,151 @@
+body {
+background-image: url('/pix/samples/bg1.gif');
+}
+
+
+.floating-logo {
+font-family: sans-serif;
+background: #0d0938;
+padding: 5px;;
+width: 350px;
+height: 70px;
+z-index: 100;
+position: fixed;
+top: 0px;
+left: 0px;
+}
+
+.floating-menu {
+font-family: sans-serif;
+background: #0d0938;
+padding: 5px;;
+width: 800px;
+height: 70px;
+z-index: 100;
+position: fixed;
+top: 0px;
+left: 350px;
+}
+.floating-menu ul{
+	margin-left: 100px; 
+}
+
+.floating-menu li {
+   display:inline-block;
+   color: #fff;
+   height:100%;
+   padding: 2px 20px;
+  }
+  
+
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: #0d0938
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    color:white;
+}
+.floating-tool {
+font-family: sans-serif;
+background: #0d0938;
+padding: 5px;;
+width: 400px;
+height: 70px;
+z-index: 100;
+position: fixed;
+top: 0px;
+left: 1150px;
+}
+.floating-tool li {
+   display:inline-block;
+   color: #fff;
+   height:100%;
+   padding: 2px 20px;
+  }
+
+
+
+
+#sub-br:hover  .min-desk {
+ height: 170px;
+ opacity: 1;
+ -webkit-transition: all 0.5s ease-in-out;
+ -moz-transition: all 0.5s ease-in-out;
+}
+#min-desk img {
+ width: 170px;
+ height: 170px;
+}
+#sub-br p {
+ text-align: left;
+}
+#sub-br a {
+ margin-top: 5px;
+ padding: 1px 4px;
+ font-size: 15px;
+ background: #0088ff;
+ color: #fff;
+ float: right;
+ font-family: Browallia New;
+}
+#sub-br {
+ width: 170px;
+ height: 170px;
+ font-size: 13px;
+ background: #fff;
+ float: left;
+ padding: 5px;
+ margin: 10px 0 0 10px;
+ text-align: center;
+ -webkit-box-shadow: 1px 1px 1px #f1f1f1;
+ -moz-box-shadow: 1px 1px 1px #f1f1f1;
+ -webkit-background-size: 200px; 
+}
+#detailProduk {
+  margin: 120px auto;
+  height: 200px;
+  width: 800px;
+}
+
+.container {
+  margin: 120px auto;
+  width: 800px;
+  height: 600px;
+}
+.container table{width: 100%; background-color: #f0f0f0;}
+.container table td,.container table th{
+   padding:10px 8px;
+}
+.container table td{
+  background-color: #ffffff;
+  border-bottom: 1px solid grey;
+}
+.h1{
+	background-color: #0d0938;
+	color: white;
+	margin-top:800px;
+	width: 1366px;
+}
