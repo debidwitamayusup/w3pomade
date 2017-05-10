@@ -11,11 +11,18 @@ if(!isset($_SESSION['valid'])) {
 include_once("connection.php");
 
 //getting id of the data from url
-$id = $_GET['idProduk'];
+$idProduk = $_GET['idProduk'];
+$idKeranjang = $_GET['idKeranjang'];
+
 //deleting the row from table
-$result=mysqli_query($mysqli, "DELETE FROM detailKeranjang WHERE idProduk=$id");
+if($result=mysqli_query($mysqli, 
+	"DELETE FROM `w3pomade`.`detailkeranjang` WHERE  `idKeranjang`='" . $idKeranjang ."' AND `idProduk`='" . $idProduk ."'")) {
+		header('Location:keranjang.php');
+}
 
 //redirecting to the display page (view.php in our case)
-header("Location:keranjang.php");
+//header("Location:keranjang.php");
 ?>
+<div style='margin-top:500px;width: 500px;height:300px'>
+</div>
 
