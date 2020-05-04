@@ -102,10 +102,10 @@ if(isset($_POST['submit'])) {
 		if (isset($_SESSION['idProduk'])) {
 
 	
-			header('Location: index.php');	
+			header('Location: sindex.php');	
 		} else {
 			 
-     header('Location: index.php');
+     header('Location: oilbased.php');
 		}
 		}
 		}
@@ -183,7 +183,7 @@ if(isset($_POST['submit'])) {
 
 	 $result = mysqli_query($mysqli, "SELECT * FROM produk WHERE idProduk='".$_GET['idProduk']."'");
                  while($dt = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-			header('Location: index.php?p=detProduk&idProduk='.$dt[idProduk]);
+			header('Location: murrays.php?p=detProduk&idProduk='.$dt[idProduk]);
 		}	
 		} else {
                 $result = mysqli_query($mysqli, "SELECT * FROM produk WHERE idProduk='".$_GET['idProduk']."'");

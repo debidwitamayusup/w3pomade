@@ -11,41 +11,29 @@
     <main>
 
           <nav class="floating-logo">
-          <a href="index.php">
-          <!-- <img src='img/logo.png'> -->
-          <h1>SOG - Shella's Outdoor Gear</h1>
-          </a>
+          <a href="homeadmin.php"><img src='img/logo.png'></a>
           </nav>
 
           <nav class="floating-menu">
           <ul>
-            <li><a href="index.php"><font size="5">home</font></a></li>
-             <li class="dropdown">
-              <a href="javascript:void(0)" class="dropbtn"><font size="5">kategori</font></a>
+            <li><a href="homeadmin.php"><font size="5">home</font></a></li>
+            <li><a href="produkadmin.php"><font size="5">produk</font></a></li>
+			  <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn"><font size="5">member</font></a>
               <div class="dropdown-content">
-                <a href="celana.php">Celana Gunung</a>
-                <a href="tenda.php">Tenda</a>
-                <a href="sepatu.php">Sepatu</a>
-                <a href="tas.php">Tas</a>
+                <a href="user.php">List Member</a>
+                <a href="statusmember.php">Status</a>
               </div>
-            </li> 
-            <li><font size="5">artikel</font></li>
             </ul>
             </nav>
             <nav class="floating-tool">
              <ul>
-              <li class="dropdown">
-				  <a href="javascript:void(0)" class="dropbtn"><img src="img/keranjang.png"></a>
-              	<div class="dropdown-content">
-              		<a href="keranjang.php">Keranjang</a>
-              		<a href="checkout.php">Check Out</a>
-              	</div>
-              	</li>
               <?php
                 if(isset($_SESSION['valid'])) {
                       echo "<li class=\"dropdown\"><a href=\"javascript:void(0)\" class=\"dropbtn\"><font size=\"5\">".$_SESSION['username']."</font>"."</a>";
                       echo "<div class=\"dropdown-content\">
                               <a href=\"pengaturan.php\">Pengaturan</a>
+                              <a href=\"registeradmin.php\">Daftar Admin</a>
                               <a href=\"logout.php\">Logout</a>
                             </div></li>";
                 }else{

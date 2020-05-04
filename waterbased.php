@@ -4,21 +4,20 @@
     switch($p) 
     {
      default :
-     include('slider.php'); 
 //including the database connection file
     include_once("connection.php");
 			
-echo "<nav class=\"sedangramai\">
-			<h1>SEDANG RAMAI</h1>
-		</nav>";
+echo "<div style=\"margin-top:80px;background-color:black;color:white;text-align:center;\">
+			<h1>WATER BASED POMADE</h1>
+		</div>";
 //fetching data in descending order (lastest entry first)
-$result = mysqli_query($mysqli, "SELECT * FROM produk WHERE status='ramai'");
+$result = mysqli_query($mysqli, "SELECT * FROM produk WHERE kategori = 'waterbased'");
 
         while($dt = mysqli_fetch_array($result, MYSQLI_ASSOC)) {   
             echo "<div id=\"sub-br\" style=\"\">
                      <div id='min-desk' class=\"min-desk\">
                       <p>
-                       <a href='?p=detProduk&idProduk=$dt[idProduk]'  title=\"Klik untuk melihat rincian\"><img src=\"img/produk/$dt[gambarProduk]\" class=\"gambar\"/></a>
+                       <a href='?p=detProduk&idProduk=$dt[idProduk]' title=\"Klik untuk melihat rincian\"><img src=\"img/produk/$dt[gambarProduk]\" class=\"gambar\"/></a>
                        $dt[namaProduk]<br/>
                        Harga Rp. $dt[harga]
                       </p>
@@ -35,10 +34,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM produk WHERE status='ramai'");
             echo "<div id=\"sub-brdetail\" style=\"\">
                      <div id='min-deskdetail' class=\"min-deskdetail\">
                       <p>
-                       <a href='?p=detProduk&idProduk=$dt[idProduk]'><img src=\"img/produk/$dt[gambarProduk]\" class=\"gambar\" ></a>
+                       <a href='?p=detProduk&idProduk=$dt[idProduk]'><img src=\"img/produk/$dt[gambarProduk]\" class=\"gambar\"/></a>
                        $dt[namaProduk]<br/>
-                       Harga Rp. $dt[harga] ||
-                       Tersedia : $dt[stok] pcs
+                       Harga Rp. $dt[harga] || Tersedia : $dt[stok] pcs
                       </p>
                       </div>
 					
@@ -52,14 +50,14 @@ $result = mysqli_query($mysqli, "SELECT * FROM produk WHERE status='ramai'");
 					 echo "<h3> $dt[deskripsi6]</h3>";	 
 
                         if(!isset($_SESSION['valid'])) {
-                           echo "<form  method=\"POST\" action=\"login.php?eksen=adaProduk&p=detProduk&idProduk=$dt[idProduk]\">";
-                             echo "<input type=\"hidden\" name=\"p\" value=\"adaProduk\">";
+                                echo "<form  method=\"POST\" action=\"loginwaterbased.php?eksen=adaProduk&p=detProduk&idProduk=$dt[idProduk]\">";
+                            echo "<input type=\"hidden\" name=\"p\" value=\"adaProduk\">";
                              echo "<input type=\"hidden\" name=\"detProduk\" value=\"detProduk\">";
                              //echo "<input type\"hidden\" name=\"idProduk\" value=\"$dt[idProduk]\">";
                         }
                         else
                         {
-                            echo "<div class=\"njing inputbiasa\">";
+                            echo "<div class=\"njing\">";
 							echo "<form method=\"POST\" action=\"keranjang.php?aksi=tambah\">";
                         }
                      echo  "<table align=left>
